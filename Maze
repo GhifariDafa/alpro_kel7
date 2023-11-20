@@ -1,1 +1,18 @@
-.
+#membuat fungsi agar robot bisa berbelok ke kanan
+def turn_right():
+    count = 3
+    while count > 0:
+        turn_left()
+        count -= 1
+#membuat statement 'jika di depan clear (tidak ada apa-apa)' maka robot akan bergerak lurus otomatis
+if front_is_clear():
+    move()
+#membuat loop dan statement agar robot bisa ke finish tanpa menabrak tembok
+while not at_goal():
+    if right_is_clear():
+        turn_right()
+        move()
+    elif front_is_clear():
+        move()
+    else:
+        turn_left()
